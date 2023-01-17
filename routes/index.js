@@ -1,17 +1,16 @@
 var express = require("express");
 var router = express.Router();
+const { allUser, product, login, index, main } = require("../controlers");
 
 /* GET home page. */
-router.get("/home", function (req, res, next) {
-  res.render("index", { title: "Vyshnavi Santhosh" });
-});
+router.get("/home", main);
 
-router.get("/main", function (req, res, next) {
-  res.render("index", { title: "Main" });
-});
+router.get("/main", index);
 
-router.get("/login", function (req, res, next) {
-  res.render("login", { title: "Login page", firstlabel: "UserName" });
-});
+router.get("/login", login);
+
+router.get("/product", product);
+
+router.get("/users-list", allUser);
 
 module.exports = router;

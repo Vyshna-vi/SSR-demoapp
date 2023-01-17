@@ -1,0 +1,33 @@
+const allUser = function (req, res, next) {
+  const allUsers = [
+    { name: "Panda", age: "15" },
+    { name: "Grizzly", age: "15" },
+    { name: "Icebear", age: "15" },
+  ];
+  res.render("allusers", { allUsers });
+};
+
+const product = function (req, res, next) {
+  const productData = { name: "Milma", mgfdate: "10-10-2022", price: "25" };
+  res.render("product", { productData });
+};
+
+const login = function (req, res, next) {
+  res.render("login", { title: "Login page", firstlabel: "UserName" });
+};
+
+const index = function (req, res, next) {
+  res.render("index", { title: "Main" });
+};
+
+const main = function (req, res, next) {
+  res.render("index", { title: "Vyshnavi Santhosh" });
+};
+
+module.exports = {
+  allUser,
+  product,
+  login,
+  index,
+  main,
+};
